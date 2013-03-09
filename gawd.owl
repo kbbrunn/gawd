@@ -1,0 +1,337 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://concordia.atlantides.org/gawd/"
+     xml:base="http://concordia.atlantides.org/gawd/"
+     xmlns:schema="http://schema.org/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:cito="http://purl.org/spar/cito/"
+     xmlns:event="http://purl.org/NET/c4dm/event.owl#"
+     xmlns:bibo="http://purl.org/ontology/bibo/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:gawd="http://concordia.atlantides.org/gawd/">
+    <owl:Ontology rdf:about="http://concordia.atlantides.org/gawd/">
+        <owl:imports rdf:resource="http://purl.org/ontology/bibo/"/>
+        <owl:imports rdf:resource="http://purl.org/spar/cito/"/>
+        <owl:imports rdf:resource="http://schema.org/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://concordia.atlantides.org/gawd/contains -->
+
+    <owl:ObjectProperty rdf:about="http://concordia.atlantides.org/gawd/contains">
+        <rdfs:domain rdf:resource="http://concordia.atlantides.org/gawd/IllustratedText"/>
+        <rdfs:range rdf:resource="http://concordia.atlantides.org/gawd/Image"/>
+        <rdfs:range rdf:resource="http://concordia.atlantides.org/gawd/Text"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://concordia.atlantides.org/gawd/edits -->
+
+    <owl:ObjectProperty rdf:about="http://concordia.atlantides.org/gawd/edits">
+        <rdfs:comment xml:lang="en">Use of this verb implies that the subject is an edition.</rdfs:comment>
+        <rdfs:range rdf:resource="http://concordia.atlantides.org/gawd/Text"/>
+        <rdfs:domain rdf:resource="http://concordia.atlantides.org/gawd/Text"/>
+        <rdfs:subPropertyOf rdf:resource="http://concordia.atlantides.org/gawd/embodies"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://concordia.atlantides.org/gawd/embodies -->
+
+    <owl:ObjectProperty rdf:about="http://concordia.atlantides.org/gawd/embodies">
+        <rdfs:comment xml:lang="en">Like frbr:embodies...</rdfs:comment>
+        <rdfs:range rdf:resource="http://concordia.atlantides.org/gawd/CreativeWork"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://concordia.atlantides.org/gawd/ManifestWork"/>
+                    <rdf:Description rdf:about="http://purl.org/ontology/bibo/Collection"/>
+                    <rdf:Description rdf:about="http://purl.org/ontology/bibo/Document"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://concordia.atlantides.org/gawd/reproduces -->
+
+    <owl:ObjectProperty rdf:about="http://concordia.atlantides.org/gawd/reproduces">
+        <rdfs:comment xml:lang="en">Use of this verb implies that the subject is a facsimile edition.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://concordia.atlantides.org/gawd/ManifestWork"/>
+        <rdfs:range rdf:resource="http://concordia.atlantides.org/gawd/ManifestWork"/>
+        <rdfs:subPropertyOf rdf:resource="http://concordia.atlantides.org/gawd/embodies"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://concordia.atlantides.org/gawd/supports -->
+
+    <owl:ObjectProperty rdf:about="http://concordia.atlantides.org/gawd/supports">
+        <rdfs:comment xml:lang="en">Constitutes the physical support for an image or text.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://concordia.atlantides.org/gawd/PhysicalObject"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://concordia.atlantides.org/gawd/IllustratedText"/>
+                    <rdf:Description rdf:about="http://concordia.atlantides.org/gawd/Image"/>
+                    <rdf:Description rdf:about="http://concordia.atlantides.org/gawd/Text"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://concordia.atlantides.org/gawd/translates -->
+
+    <owl:ObjectProperty rdf:about="http://concordia.atlantides.org/gawd/translates">
+        <rdfs:comment xml:lang="en">Use of this verb implies that the subject is a translation.</rdfs:comment>
+        <rdfs:range rdf:resource="http://concordia.atlantides.org/gawd/Text"/>
+        <rdfs:domain rdf:resource="http://concordia.atlantides.org/gawd/Text"/>
+        <rdfs:subPropertyOf rdf:resource="http://concordia.atlantides.org/gawd/embodies"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://concordia.atlantides.org/gawd/CanonicalWork -->
+
+    <owl:Class rdf:about="http://concordia.atlantides.org/gawd/CanonicalWork">
+        <rdfs:subClassOf rdf:resource="http://concordia.atlantides.org/gawd/CreativeWork"/>
+    </owl:Class>
+    
+
+
+    <!-- http://concordia.atlantides.org/gawd/CreatedObject -->
+
+    <owl:Class rdf:about="http://concordia.atlantides.org/gawd/CreatedObject">
+        <rdfs:subClassOf rdf:resource="http://concordia.atlantides.org/gawd/ManifestWork"/>
+        <rdfs:subClassOf rdf:resource="http://concordia.atlantides.org/gawd/PhysicalObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://concordia.atlantides.org/gawd/CreativeWork -->
+
+    <owl:Class rdf:about="http://concordia.atlantides.org/gawd/CreativeWork"/>
+    
+
+
+    <!-- http://concordia.atlantides.org/gawd/HistoricalEvent -->
+
+    <owl:Class rdf:about="http://concordia.atlantides.org/gawd/HistoricalEvent">
+        <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://concordia.atlantides.org/gawd/IllustratedText -->
+
+    <owl:Class rdf:about="http://concordia.atlantides.org/gawd/IllustratedText">
+        <rdfs:subClassOf rdf:resource="http://concordia.atlantides.org/gawd/ManifestWork"/>
+    </owl:Class>
+    
+
+
+    <!-- http://concordia.atlantides.org/gawd/Image -->
+
+    <owl:Class rdf:about="http://concordia.atlantides.org/gawd/Image">
+        <owl:equivalentClass rdf:resource="http://purl.org/ontology/bibo/Image"/>
+        <rdfs:subClassOf rdf:resource="http://concordia.atlantides.org/gawd/ManifestWork"/>
+    </owl:Class>
+    
+
+
+    <!-- http://concordia.atlantides.org/gawd/ManifestWork -->
+
+    <owl:Class rdf:about="http://concordia.atlantides.org/gawd/ManifestWork">
+        <rdfs:subClassOf rdf:resource="http://concordia.atlantides.org/gawd/CreativeWork"/>
+        <rdfs:comment xml:lang="en">Probably equivalent to a frbr:Manifestation</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://concordia.atlantides.org/gawd/Manuscript -->
+
+    <owl:Class rdf:about="http://concordia.atlantides.org/gawd/Manuscript">
+        <rdfs:subClassOf rdf:resource="http://concordia.atlantides.org/gawd/CreatedObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://concordia.atlantides.org/gawd/PhysicalObject -->
+
+    <owl:Class rdf:about="http://concordia.atlantides.org/gawd/PhysicalObject"/>
+    
+
+
+    <!-- http://concordia.atlantides.org/gawd/Text -->
+
+    <owl:Class rdf:about="http://concordia.atlantides.org/gawd/Text">
+        <rdfs:subClassOf rdf:resource="http://concordia.atlantides.org/gawd/ManifestWork"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/NET/c4dm/event.owl#Event -->
+
+    <rdf:Description rdf:about="http://purl.org/NET/c4dm/event.owl#Event">
+        <owl:equivalentClass rdf:resource="http://purl.org/ontology/bibo/Event"/>
+        <owl:equivalentClass rdf:resource="http://schema.org/Event"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/AcademicArticle -->
+
+    <rdf:Description rdf:about="http://purl.org/ontology/bibo/AcademicArticle">
+        <owl:equivalentClass rdf:resource="http://schema.org/ScholarlyArticle"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/Book -->
+
+    <rdf:Description rdf:about="http://purl.org/ontology/bibo/Book">
+        <owl:equivalentClass rdf:resource="http://schema.org/Book"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/Event -->
+
+    <rdf:Description rdf:about="http://purl.org/ontology/bibo/Event"/>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/Image -->
+
+    <rdf:Description rdf:about="http://purl.org/ontology/bibo/Image"/>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/Map -->
+
+    <rdf:Description rdf:about="http://purl.org/ontology/bibo/Map">
+        <owl:equivalentClass rdf:resource="http://schema.org/Map"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/Webpage -->
+
+    <rdf:Description rdf:about="http://purl.org/ontology/bibo/Webpage">
+        <owl:equivalentClass rdf:resource="http://schema.org/WebPage"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://schema.org/Book -->
+
+    <rdf:Description rdf:about="http://schema.org/Book"/>
+    
+
+
+    <!-- http://schema.org/Event -->
+
+    <rdf:Description rdf:about="http://schema.org/Event"/>
+    
+
+
+    <!-- http://schema.org/Map -->
+
+    <rdf:Description rdf:about="http://schema.org/Map"/>
+    
+
+
+    <!-- http://schema.org/Organization -->
+
+    <rdf:Description rdf:about="http://schema.org/Organization">
+        <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://schema.org/Person -->
+
+    <rdf:Description rdf:about="http://schema.org/Person">
+        <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://schema.org/ScholarlyArticle -->
+
+    <rdf:Description rdf:about="http://schema.org/ScholarlyArticle"/>
+    
+
+
+    <!-- http://schema.org/WebPage -->
+
+    <rdf:Description rdf:about="http://schema.org/WebPage"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Organization -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Organization"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+
