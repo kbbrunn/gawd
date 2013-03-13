@@ -1,0 +1,41 @@
+@prefix srp: http://syriaca.org/
+@prefix gawd: http://concordia.atlantides.org/gawd/
+@prefix oclc: http://www.worldcat.org/oclc/
+
+
+# SRP identifies a CanonicalWork with "work/book-of-the-dove"
+#    of which SRP's person/239 (Bar Hebraeus) is the author
+#    and of which the English title is "Book of the Dove"
+
+srp:work/book-of-the-dove a gawd:CanonicalWork;
+	dc:author srp:person/239/ ;
+	dc:title "Book of the Dove"@en .
+
+
+# SRP identifies a Manuscript with "manuscript/paris-bnf-syr-313"
+#   which supports (i.e., carries, physically contains) something of interest at a particular range (1-56)
+
+srp:manuscript/paris-bnf-syr-313 a gawd:Manuscript ;
+	gawd:supports srp:manuscript/paris-bnf-syr-313/1-56 .
+
+
+# SRP says the thing of interest at that range is a Text
+#   which embodies Bar Hebraeus' work book of the dove, as defined above
+
+srp:manuscript/paris-bnf-syr-313/1-56 a gawd:Text ;
+	gawd:embodies srp:work/book-of-the-dove .
+
+
+# OCLC/Worldcat identifies something that contains an edition of that Text
+
+oclc:7485581/519-599 gawd:edits srp:manuscript/paris-bnf-syr-313/1-56 .
+
+
+# OCLC/Worldcat identifies something that is a translation of that Text
+
+oclc:652251598 gawd:translates srp:manuscript/paris-bnf-syr-313/1-56 .
+
+
+
+
+
