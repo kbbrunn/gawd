@@ -29,12 +29,13 @@ srp:manuscript/paris-bnf-syr-313/1-56 a gawd:Text ;
 # OCLC/Worldcat identifies something that contains an edition of that Text
 
 oclc:7485581/519-599 gawd:edits srp:manuscript/paris-bnf-syr-313/1-56 .
-
+<!--How do we indicate an ecclectic edition? How would we indicate an edition with so many MSS that we don't want to indicate them all. Could this just point to the work instead?-->
 
 # OCLC/Worldcat identifies something that is a translation of that Text
 
 oclc:652251598 gawd:translates srp:manuscript/paris-bnf-syr-313/1-56 .
 
+<!--Do we need to distinguish Modern translation and ancient version? Can we show the language of the translation?-->
 
 
 
